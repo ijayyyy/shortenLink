@@ -20,9 +20,9 @@ function LogIn() {
   return (
     <section>
       <div className="container forms">
-        <div className="form login">
+        <div className="form signup">
           <div className="form-content">
-            <header>
+            <header className="sign-in">
               <h5>Log in with:</h5>
              
               <div className="btti">
@@ -36,16 +36,17 @@ function LogIn() {
                 </a> 
               </div>
              
-              <div className="or">
-              <h4>
-              {""}  
+              <div className="or-span">
+             <h4> 
+              {" "}
                 <span className="span1">Or</span>{" "}
               </h4>
               </div>
             
             </header>
 
-            <div className="field input-field">
+            <div className="field-container"> 
+              <div className="field input-field">
               <TextInput
                 value={loginPayload.email}
                 onChange={(val) =>
@@ -58,7 +59,8 @@ function LogIn() {
                 className="input"
               />
             </div>
-
+           
+        
             <div className="field input-field">
               <TextInput
                 value={loginPayload.password}
@@ -96,11 +98,11 @@ function LogIn() {
               </span>
             </div>
 
-            <p>
-              By signing in with an account, You agree to Scissor's{" "}
-              <b>Terms of service, privacy policy</b> and{" "}
-              <b>Acceptable Use Policy.</b>
+            <p className="toss">
+              <p className="tos">By signing in with an account, You agree to </p>{" "}
+              <b className="tosss">Scissor's Terms of service, privacy policy and Acceptable Use Policy.</b>{" "}
             </p>
+            </div>     
           </div>
         </div>
       </div>

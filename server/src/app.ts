@@ -8,12 +8,14 @@ import baseRouter from "./routes";
 
 const app = express();
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors({ credentials: true, origin: true, methods: ["POST", "GET"] }));
 
-const port = process.env.PORT;
-
+const port = process.env.PORT; 
 app.listen(port, () => {
   console.log("Server running on port: " + port);
 });

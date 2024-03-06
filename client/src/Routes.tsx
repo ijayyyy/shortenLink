@@ -6,7 +6,7 @@ import PrivateRoutes from "./components/RouteRestriction/PrivateRoute";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/ContactPage";
 import Profile from "./components/pages/Profile";
-import Dashboard from "./components/pages/Dashboard";
+import Dashboard from "./components/pages/Dashboard";  
 import useAuth from "./util/useAuth"; // Import useAuth hook
 
 function MainRoutes() {

@@ -23,14 +23,14 @@ function SignUp() {
       <section className="container forms">
         <div className="form signup">
           <div className="form-content">
-            <header>
+            <header className="sign-in">
               <h5>Sign up with:</h5>
-              <div className="bttn">
-                <a href="/" className="btti">
+              <div className="btti">
+                <a href="/" className="bttii">
                   <img src={google} alt="" />
                   Google
                 </a>
-                <a href="/" className="bttii">
+                <a href="/" className="bttiii">
                   <img src={Pathapple} alt="" />
                   Apple
                 </a>
@@ -40,10 +40,10 @@ function SignUp() {
                 <span className="span1">Or</span>{" "}
               </h4>
             </header>
-
-            <div className="field input-field">
+           
+           <div className="field-container">
+           <div className="field input-field">
               <TextInput
-                label="Full name"
                 value={signupPayload.fullName}
                 onChange={(val) =>
                   setSignupPayload({
@@ -58,7 +58,6 @@ function SignUp() {
 
             <div className="field input-field">
               <TextInput
-                label="Email"
                 value={signupPayload.email}
                 className="input"
                 onChange={(val) =>
@@ -73,7 +72,6 @@ function SignUp() {
 
             <div className="field input-field">
               <TextInput
-                label="Password"
                 value={signupPayload.password}
                 onChange={(val) =>
                   setSignupPayload({
@@ -88,14 +86,6 @@ function SignUp() {
               <img src={vectorA} alt="" className="img1" />
             </div>
 
-            <div className="field input-field">
-              <input
-                type="password"
-                placeholder="Retype password"
-                className="password"
-              />
-              <img src={vectorA} alt="" className="img1" />
-            </div>
 
             <div className="form-link2">
               <a href="/" className="forgot-pass">
@@ -110,7 +100,7 @@ function SignUp() {
                   signup(signupPayload, navigate);
                 }}
               >
-                Sign up
+                Sign up with Email
               </button>
             </div>
 
@@ -123,11 +113,12 @@ function SignUp() {
               </span>
             </div>
 
-            <p>
-              By signing in with an account, You agree to Scissor's{" "}
-              <b>Terms of service, privacy policy</b> and{" "}
-              <b>Acceptable Use Policy.</b>
+            <p className="toss">
+              <p className="tos">By signing up, You agree to Scissor's</p>
+              <b className="tosss">Terms of service, privacy policy and Acceptable Use of Policy.</b>
             </p>
+           </div>
+            
           </div>
         </div>
       </section>

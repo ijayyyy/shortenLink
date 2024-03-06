@@ -14,7 +14,7 @@ body {
   height: 100%;
 }
 header {
-  position: sticky;
+ 
   height: 80px;
   width: 100%;
   top: 0;
@@ -30,8 +30,8 @@ header {
 
 .logo {
   display: flex;
-  align-items: center;
-  /* margin-right: 3px;  */
+ 
+   margin-right: 3px;  
 }
 .navbar {
   display: flex;

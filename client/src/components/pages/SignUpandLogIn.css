@@ -25,14 +25,14 @@
   background: #fff;
 }
 
-header {
+.sign-in {
   text-align: center;
   display: flex;
   flex-direction: column;
   margin: auto;
   
 }
-header > h5 {
+.sign-in > h5 {
   font-size: 15px;
   color: #5c6f7f;
   margin-bottom: 20px;
@@ -68,7 +68,7 @@ header > h5 {
   border-radius: 1px;
   margin: 20px;
 }
-header > h4 {
+.sign-in > h4 {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
@@ -78,8 +78,8 @@ header > h4 {
   text-align: center;
   width: 15px;
 }
-header > h4::before,
-header > h4::after {
+.sign-in > h4::before,
+.sign-in > h4::after {
   content: "";
   flex: 1 1;
   padding: 0 15px;
@@ -87,14 +87,22 @@ header > h4::after {
   margin: auto;
 }
 .span1 {
-  width: 40px;
+  width: 70px;
   color: #868a8e;
 }
-
+.sign-in > h4 {
+  margin-top: 27px;
+}
+.or-span {
+  margin-top: 20px;
+}
 .form {
   margin-top: 30px;
 }
 
+.field-container {
+  margin-top: 80px;
+}
 .form > p {
   color: #a0b1c0;
   text-align: center;
@@ -105,7 +113,7 @@ header > h4::after {
   position: relative;
   height: 50px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .field input {
   font-size: 16px;
@@ -174,7 +182,17 @@ header > h4::after {
 .form-link2 a {
   color: #868a8e;
 }
-
+.toss {
+  margin-top: 10px;
+  text-align: center;
+}
+.tos {
+  width: 350px;
+  margin-left: 50px;
+}
+.tosss {
+  width: 450px;
+}
 /* footer */
 
 footer {
