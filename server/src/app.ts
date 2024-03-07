@@ -8,9 +8,6 @@ import baseRouter from "./routes";
 
 const app = express();
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({ credentials: true, origin: true, methods: ["POST", "GET"] }));
@@ -21,6 +18,8 @@ app.listen(port, () => {
 });
 
 dbConnect();
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   console.log(`Route call: ${req.method} : ${req.originalUrl}`);
