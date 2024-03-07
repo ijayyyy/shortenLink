@@ -18,7 +18,7 @@ app.listen(port, () => {
 });
 
 dbConnect();
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/api", (req, res) => res.send("Express on Vercel"));
 
 
 app.use((req: Request, res: Response, next: NextFunction) => {
