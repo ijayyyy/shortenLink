@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ credentials: true, origin: true, methods: ["POST", "GET"] }));
+app.use(cors({ credentials: true, origin: ["https://shorten-link-api.vercel.app/"], methods: ["POST", "GET"] }));
 
 const port = process.env.PORT; 
 app.listen(port, () => {
