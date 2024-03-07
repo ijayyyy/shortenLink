@@ -3,7 +3,7 @@ import { handleRefreshToken } from "./authServices";
 
 // Create a new Axios instance
 const axiosInstance = axios.create({
-  baseURL: "https://shorten-link-api.vercel.app/",
+  baseURL: "https://shorten-link-api.vercel.app",
 });
 
 // Add a request interceptor
