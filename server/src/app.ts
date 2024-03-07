@@ -9,7 +9,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ credentials: true, origin: ["https://shorten-link-dun.vercel.app"], methods: ["POST", "GET"] }));
+app.use(cors({
+   credentials: true,
+    origin: ["https://shorten-link-dun.vercel.app"], 
+   methods: ["POST", "GET"] 
+  }));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
@@ -23,6 +27,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.use("/api", baseRouter); // Assuming baseRouter handles all API routes starting with '/api'
+app.use("/api", baseRouter); 
 
 export default app;
