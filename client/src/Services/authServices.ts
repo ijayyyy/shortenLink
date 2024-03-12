@@ -30,7 +30,7 @@ export const login = async (
   try {
     const { data } = await httpClient.post("user/login", payload);
     storeTokensToLocal(data.accessToken, data.refreshToken);
-    redirectTo("/home");
+    redirectTo("home");
     snackBarStore.showSnackBar("Login success", "success");
   } catch (error: any) {
     snackBarStore.showSnackBar(
