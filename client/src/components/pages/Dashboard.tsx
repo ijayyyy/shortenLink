@@ -227,7 +227,7 @@ const convertRowDataToTableData = (
 ) => {
   return {
     ...data,
-    urlCode: `https://scissor-app-jdpp.onrender.com/api/url${data.urlCode}`,
+    urlCode: `https://scissor-app-jdpp.onrender.com/${data.urlCode}`,
     createdAt: moment(data.createdAt).format("l"),
     actions: renderActions(data, setEditUrlData, setIsEditDialogOpen),
     barcodeData: renderBarcode(data.barcodeData),
