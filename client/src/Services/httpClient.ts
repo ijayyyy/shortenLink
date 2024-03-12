@@ -3,7 +3,7 @@ import { handleRefreshToken } from "./authServices";
 
 // Create a new Axios instance
 const axiosInstance = axios.create({
-  baseURL: "https://scissor-app-jdpp.onrender.com/",
+  baseURL: "https://scissor-app-jdpp.onrender.com",
 });
 
 // Add a request interceptor
@@ -35,7 +35,7 @@ axiosInstance.interceptors.response.use(
     // Check if the error status is 401 (Unauthorized)
     if (error.response.status === 401) {
       try {
-        // Attempt to refresh the token
+        // Attempt to refresh the tokens
         await handleRefreshToken();
 
         // Retry the original request

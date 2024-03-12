@@ -227,7 +227,7 @@ const convertRowDataToTableData = (
 ) => {
   return {
     ...data,
-    urlCode: `https://scissor-app-jdpp.onrender.com/${data.urlCode}`,
+    urlCode: `https://scissor-app-jdpp.onrender.com${data.urlCode}`,
     createdAt: moment(data.createdAt).format("l"),
     actions: renderActions(data, setEditUrlData, setIsEditDialogOpen),
     barcodeData: renderBarcode(data.barcodeData),
@@ -259,7 +259,7 @@ const renderActions = (
       />
       <Button
         label="Delete"
-        variant="outlined-secondary"
+        variant="outlined-secondary" 
         onClick={() => {
           if (
             window.confirm(`Are you sure you want to delete: ${data.name}?`)
