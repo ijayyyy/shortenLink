@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
    credentials: true,
-    origin: ["https://scissor-app-jdpp.onrender.com"], 
+    origin: ["https://shorten-link-dun.vercel.app"], 
    methods: ["POST", "GET"] 
   }));
 

@@ -33,7 +33,7 @@ axiosInstance.interceptors.response.use(
   },
   async (error) => {
     // Check if the error status is 401 (Unauthorized)
-    if (error.response.status === 401) {
+    if (error.response && error.response.status === 401) {
       try {
         // Attempt to refresh the tokens
         await handleRefreshToken();
