@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
    credentials: true,
-    origin: ["https://scissor-app-jdpp.onrender.com/"], 
+    origin: ["https://scissor-app-jdpp.onrender.com"], 
    methods: ["POST", "GET"] 
   }));
 
