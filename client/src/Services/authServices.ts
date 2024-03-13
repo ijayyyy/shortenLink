@@ -33,13 +33,16 @@ export const login = async (
     redirectTo("/home");
     snackBarStore.showSnackBar("Login success", "success");
   } catch (error: any) {
+    // Check if error.response exists before accessing its data property
+    const errorMessage = error.response ? error.response.data : error.message;
     snackBarStore.showSnackBar(
-      `Problem in Login: ${error.response.data}`,
+      `Problem in Login: ${errorMessage}`,
       "error"
     );
     console.error(error);
   }
 };
+
 
 export const handleRefreshToken = async () => {
   try {
