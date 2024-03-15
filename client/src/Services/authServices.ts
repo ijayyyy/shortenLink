@@ -2,7 +2,7 @@ import httpClient from "./httpClient";
 
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
-import { UserLogInPayloadType, UserRegisterPayloadType } from "../types";
+import { UserLogInPayloadType, UserRegisterPayloadType } from "../types"; 
 import snackBarStore from "../components/snackbar/store/snackBarStore";
 
 export const signup = async (
