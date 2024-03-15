@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
    credentials: true,
-    origin: ["https://delicate-cocada-132c97.netlify.app"], 
+    origin: ["*"], 
    methods: ["POST", "GET"] 
   }));
 

@@ -13,7 +13,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)({
     credentials: true,
-    origin: ["https://delicate-cocada-132c97.netlify.app/"],
+    origin: ["*"],
     methods: ["POST", "GET"]
 }));
 const port = process.env.PORT || 3000;
