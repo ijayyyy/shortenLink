@@ -10,10 +10,18 @@ export const signup = async (
   redirectTo: NavigateFunction
 ) => {
   try {
-    const { data } = await httpClient.post("user", payload);
-    storeTokensToLocal(data.accessToken, data.refreshToken);
+    const response = await httpClient.post("user", payload);
+    if (response && response.data) {
+      const { data } = response;
+      storeTokensToLocal(data.accessToken, data.refreshToken);
     snackBarStore.showSnackBar("Signup success", "success");
     redirectTo("/home");
+    } else {
+      snackBarStore.showSnackBar(
+        `Problem in Signup: ${response.data}`,
+        "error"
+      );
+    }
   } catch (error: any) {
     snackBarStore.showSnackBar(
       `Problem in Signup: ${error.response.data}`,
