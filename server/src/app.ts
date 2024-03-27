@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
    credentials: true,
-    origin: ["https://delicate-cocada-132c97.netlify.app"], 
-   methods: ["POST", "GET"] 
+    origin: "https://delicate-cocada-132c97.netlify.app", 
+   methods: ["POST", "GET"],
+   allowedHeaders: ["Content-Type", "Authorization"], 
   }));
 
 const port = process.env.PORT || 3000;
