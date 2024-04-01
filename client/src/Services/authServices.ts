@@ -23,8 +23,9 @@ export const signup = async (
       );
     }
   } catch (error: any) {
+    const errorMessage = error.response ? error.response.data : error.message;
     snackBarStore.showSnackBar(
-      `Problem in Signup: ${error.response.data}`,
+      `Problem in Signup: ${errorMessage}`,
       "error"
     );
     console.error(error);
