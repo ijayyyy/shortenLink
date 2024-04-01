@@ -36,20 +36,24 @@ export const login = async (
   redirectTo: NavigateFunction
 ) => {
   try {
-    const { data } = await httpClient.post("user/login", payload);
-    storeTokensToLocal(data.accessToken, data.refreshToken);
-    redirectTo("/home");
-    snackBarStore.showSnackBar("Login success", "success");
+    const response = await httpClient.post("user/login", payload);
+    const { data } = response;
+    if (data) {
+      storeTokensToLocal(data.accessToken, data.refreshToken);
+      redirectTo("/home");
+      snackBarStore.showSnackBar("Login success", "success");
+    } else {
+      // Handle the case where response.data is undefined
+      snackBarStore.showSnackBar("Invalid response data", "error");
+    }
   } catch (error: any) {
     // Check if error.response exists before accessing its data property
     const errorMessage = error.response ? error.response.data : error.message;
-    snackBarStore.showSnackBar(
-      `Problem in Login: ${errorMessage}`,
-      "error"
-    );
+    snackBarStore.showSnackBar(`Problem in Login: ${errorMessage}`, "error");
     console.error(error);
   }
 };
+
 
 
 export const handleRefreshToken = async () => {
