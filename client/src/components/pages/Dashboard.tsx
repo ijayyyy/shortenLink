@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import moment from "moment"; 
 import Modal from "react-modal";
 import { observer } from "mobx-react";
 
@@ -11,7 +11,7 @@ import urlStore from "../../store/urlStore";
 import { updateAndEditUrlCode } from "../../Services/urlServices";
 
 import { UrlType } from "../../types";
-import snackBarStore from "../snackbar/store/snackBarStore";
+import snackBarStore from "../snackbar/store/snackBarStore"; 
 
 import magicwand from "../../images/magicwand.png";
 
@@ -227,7 +227,7 @@ const convertRowDataToTableData = (
 ) => {
   return {
     ...data,
-    urlCode: `https://scissor-app-jdpp.onrender.com${data.urlCode}`,
+    urlCode: `https://scissor-app-jdpp.onrender.com/api/url${data.urlCode}`,
     createdAt: moment(data.createdAt).format("l"),
     actions: renderActions(data, setEditUrlData, setIsEditDialogOpen),
     barcodeData: renderBarcode(data.barcodeData),

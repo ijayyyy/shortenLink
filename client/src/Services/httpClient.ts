@@ -3,7 +3,7 @@ import { handleRefreshToken } from "./authServices";
 
 // Create a new Axios instance
 const axiosInstance = axios.create({
-  baseURL: "https://scissor-app-jdpp.onrender.com",
+  baseURL: "https://scissor-app-jdpp.onrender.com/api"
 });
 
 // Add a request interceptor
