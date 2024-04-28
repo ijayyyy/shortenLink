@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../util/useAuth";
 import { logout } from "../Services/authServices";
 
 import Logologo from "../images/Logologo.png";
 import iconsMenu from "../images/iconsMenu.png";
+import iconClose from "../images/iconClose.png";
 import chevronDown from "../images/chevronDown.png";
 
 function Header() {
   const isLoggedIn = useAuth();
   const navigate = useNavigate();
+  const [clicked, setClicked] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+    setNavbarOpen(!navbarOpen);
+  };
 
   const handleLogout = () => {
-    logout(() => navigate("/login"));
+    logout(() => navigate("/login")); 
   };
 
   return (
     <section>
       <header>
-        <p className="logo">
+        <p className="logo"> 
           <img src={Logologo} alt="logo" />
         </p>
 
-        <ul className="navbar">
+        <ul className={navbarOpen ? "navbar open" :  "navbar"}>
           <li>
             <Link to="/Dashboard" className="active">
               My URLs
@@ -31,8 +39,8 @@ function Header() {
           {/* Other navigation links */}
           <li>
             <a href="#About" className="btnn" id="btnn">
-              Features{" "}
-              <img src={chevronDown} className="img1" id="img1" alt="" />
+              Features{" "} <img src={chevronDown} className="img1" id="img1" alt="" />
+             
             </a>
             <ul className="dropdown" id="dropdown">
               <li>
@@ -53,34 +61,55 @@ function Header() {
           <li>
             <a href="#Faqs">FAQs</a>
           </li>
-        </ul>
-
-        <div className="main1">
-          {/* Conditionally render logout button if user is logged in */}
+          
+          {/* Render "Try For Free" and "Log out" buttons among the navbar */}
+          
           {isLoggedIn ? (
             <>
-              <a href="#Prices" className="trybtn" id="">
-                Try For Free
-              </a>
-
-              <Link to="/LogIn" className="logbtn" onClick={handleLogout}>
-                Log out
-              </Link>
-              <span className="menu" id="micon">
-                <img src={iconsMenu} alt="m" />
-              </span>
+              <li>
+                <Link to="/LogIn" className="logbtn" onClick={handleLogout} >
+                  Log out
+                </Link>
+              </li> 
+              <li>
+                <a href="#Prices" className="trybtn">
+                  Try For Free
+                </a>
+              </li>
             </>
           ) : (
             <>
+            <li>
               <Link to="/LogIn" className="logbtn">
                 Log In
               </Link>
-
-              <span className="menu" id="micon">
-                <img src={iconsMenu} alt="m" />
-              </span>
-            </>
+            </li>
+            <li>
+                <a href="#Prices" className="trybtn">
+                  Try For Free
+                </a>
+              </li>
+              </>
           )}
+
+       </ul>
+          
+        
+
+        <div>
+          <span className="hamburger" onClick={handleClick}>
+            {navbarOpen ? (
+              <img
+                src={iconClose} 
+                alt="Close"
+              />
+            ) : (
+              <img
+                src={iconsMenu} 
+                alt="Menu"
+              />
+            )}
+          </span>
         </div>
       </header>
     </section>

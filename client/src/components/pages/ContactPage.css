@@ -38,7 +38,7 @@ header {
 .navbar {
   display: flex;
 }
-.dropdown {
+.navbar .dropdown {
   position: absolute;
   display: block;
   width: 200px;
@@ -58,9 +58,10 @@ header {
   visibility: visible;
   opacity: 1;
 }
-.img1 {
+.navbar .img1 {
   transform: rotate(180deg);
   transition: 0.2s ease;
+  width: 15px;
 }
 
 .navbar a {
@@ -71,9 +72,7 @@ header {
   margin: 0px 30px;
   transition: all 0.5s ease;
 }
-.img1 {
-  width: 15px;
-}
+
 .navbar a:hover {
   color: #0065fe;
 }
@@ -90,10 +89,10 @@ header {
   margin-left: 10px;
   transition: all 0.5s ease;
 }
-.logbtn {
+.navbar a.logbtn {
   color: #0065fe;
 }
-.trybtn {
+.navbar a.trybtn {
   height: 40px;
   min-width: 100px;
   background-color: #0065fe;
@@ -108,7 +107,7 @@ header {
   color: blue;
 }
 
-#micon {
+.hamburger {
   font-size: 35px;
   color: #0065fe;
   cursor: pointer;
@@ -264,7 +263,7 @@ footer {
 }
 .foot2 {
   display: flex;
-  margin-left: 20%;
+ 
 }
 .end {
   font-size: 13px;
@@ -275,47 +274,29 @@ footer {
 }
 
 /* mediaqueries */
-@media (max-width: 1280px) {
-  header {
-    padding: 14px 2%;
-    transition: 0.2s;
-  }
-  .logo {
-    height: 8px;
-  }
-  .navbar a {
-    padding: 5px 0;
-    margin: 0px 10px;
-  }
-  .logbtn {
-    text-overflow: unset;
-  }
-  .trybtn {
-    height: 40px;
-    width: 8rem;
-    padding: 5px 10px;
-  }
-  .img1 {
-    display: none;
-  }
-}
 
-@media (max-width: 1090px) {
-  #micon {
+ 
+@media (max-width: 930px) {
+  .hamburger {
     display: block;
+    cursor: pointer;
   }
   .navbar {
     position: absolute;
-    top: 100%;
+    top: 50px;
     right: -100%;
     width: 270px;
-    height: 29vh;
-    background: #f6f4f4;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 10px;
     transition: all 0.5s ease;
+    display: hidden;
+    z-index: 1000;
+    padding: 20px;
   }
   .navbar a {
     display: block;
@@ -328,9 +309,48 @@ footer {
     transform: translateY(5px);
   }
   .navbar.open {
-    right: 2%;
+    display: block;
+    right: 0;
+    width: 100%;
   }
+  .navbar a.logbtn {
+    min-width: 150px;
+    background-color: #fff;
+    color: #0065fe; 
+    border: none;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  .navbar a.trybtn {
+    margin-left: 0px;
+    background-color: #fff;
+    min-width: 130px;
+    border: none;
+    color: #000;
+  }
+  .trybtn:hover,
+  .logbtn:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+  }
+  .trybtn a {
+    background-color: #f9fbfd;
+    border: none;
+    border-radius: 0;
+  }
+  .cont8i {
+    display: block;
+  }
+.foot2 {
+  display: block;
+  margin-top: 0px;
+  margin-left: 0%;
+  text-align: center;
 }
+  
+}
+
+
 
 @media only screen and (max-width: 768px) {
   .logo {
@@ -341,7 +361,7 @@ footer {
     padding: 5px 0;
     margin: 0px 10px;
   }
-  .trybtn {
+  .navbar a.trybtn {
     height: 30px;
     width: 6rem;
     padding: 3px 8px;
@@ -361,22 +381,19 @@ footer {
 
   .cont8 {
     width: 170px;
-    padding: 0 15px;
+    position: relative;
+    bottom: 0px;
+    padding: 0px;
+    margin: 15px;
   }
-
+  .cont8 h3 {
+    margin-bottom: 5px;
+   }
   .foot2 {
-    margin-top: -200px;
+    display: block;
+    /*margin-top: -200px;*/
+    text-align: center;
+    margin-left: 0%;
   }
 }
 
-@media only screen and (max-width: 427px) {
-  .cont8 {
-    width: 100px;
-    padding: 0 10px;
-    font-size: 12px;
-  }
-
-  .foot2 {
-    margin-top: -150px;
-  }
-}

@@ -63,8 +63,9 @@ function Main({ id }: { id: string }) {
 
         <div className="mains4">
           <div className="img5">
-            <img src={RectangleMirror} alt="" className="rect" />
+           
             <img src={EllipseA} alt="" className="mirror" />
+            <img src={RectangleMirror} alt="" className="rect" />
           </div>
         </div>
       </div>
@@ -79,6 +80,7 @@ function Main({ id }: { id: string }) {
             </h2>
           </div>
           <div className="card">
+           
             <div className="card1">
               <h2>3M</h2>
               <p>Active Users</p>
@@ -87,17 +89,20 @@ function Main({ id }: { id: string }) {
               <h2>60M</h2>
               <p>Links and QR codes created</p>
             </div>
+            
             <div className="card1">
               <h2>1B</h2>
               <p>Clicked and Scanned connections</p>
             </div>
-            <div className="card1">
+            <div className="card-1">
               <h2>300K</h2>
               <p>App integrations</p>
-            </div>
+            </div> 
+           
+           </div>
           </div>
         </div>
-      </div>
+   
     </section>
   );
 }

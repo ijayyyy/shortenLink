@@ -35,9 +35,9 @@ const Dashboard = observer(() => {
 
   const renderEmptyState = () => {
     return (
-      <div>
+      <div className="dashboard_empty">
         <div className="dashboard_empty-state">
-          <p>You do not have any shortened url</p>
+          <p>You do not have any shortened url.</p>
         </div>
         <Button
           onClick={() => setShowUrlAddView(true)}
@@ -174,7 +174,7 @@ const Dashboard = observer(() => {
     <div className="dashboard">
       {showUrlAddView && renderAddNewUrl()}
       {Boolean(urlData.length) ? renderAddNewButton() : renderEmptyState()}
-      {urlDataLoading && <h3>Loading...</h3>}
+      {urlDataLoading && <h3 className="loading">Loading...</h3>}
 
       {Boolean(urlData.length) && !urlDataLoading && (
         <>

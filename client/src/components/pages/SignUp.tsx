@@ -27,11 +27,11 @@ function SignUp() {
               <h5>Sign up with:</h5>
               <div className="btti">
                 <a href="/" className="bttii">
-                  <img src={google} alt="" />
+                  <img src={google} alt="" className="login-image"/>
                   Google
                 </a>
                 <a href="/" className="bttiii">
-                  <img src={Pathapple} alt="" />
+                  <img src={Pathapple} alt="" className="login-image"/>
                   Apple
                 </a>
               </div>
@@ -83,7 +83,7 @@ function SignUp() {
                 type="password"
                 className="password"
               />
-              <img src={vectorA} alt="" className="img1" />
+              <img src={vectorA} alt="" className="imgg1" />
             </div>
 
 

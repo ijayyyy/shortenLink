@@ -14,7 +14,7 @@ function Footer() {
         <div className="cont8i">
           <div className="cont-8-container">
             <div className="cont8">
-              <h4>
+              <h4 className="cont8-h4">
                 <img src={Logo} alt="" />
               </h4>
               <div className="social-links">

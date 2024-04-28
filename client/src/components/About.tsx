@@ -23,7 +23,7 @@ function About({ id }: { id: string }) {
             management. We shorten your URLs, Allow you create custom ones for
             your personal, business, event usage. Our swift QR code creation,
             management and usage tracking with advance analytics for all of
-            these is second to none.
+            the se is second to none.
           </p>
         </div>
         <div className="cards1">

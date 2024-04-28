@@ -36,12 +36,12 @@ function LogIn() {
                 </a> 
               </div>
              
-              <div className="or-span">
+              
              <h4> 
               {" "}
                 <span className="span1">Or</span>{" "}
               </h4>
-              </div>
+             
             
             </header>
 
